@@ -12,7 +12,7 @@
     <meta property="og:image" content="assets/nerosbarbearia.png">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <script type="application/ld+json">
@@ -49,15 +49,15 @@
 
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo-wrapper">
+            <a href="#home" class="logo-link">
                 <img src="assets/nerosbarbearia.png" alt="Neros Studio Barbearia" class="logo-img">
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Quem Somos</a></li>
+                <li><a href="#servicos">Nossos Serviços</a></li>
                 <li><a href="#avaliacoes">Avaliações</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-header">Agendar</a></li>
             </ul>
             <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
                 <i class="fa-solid fa-bars"></i>
@@ -65,216 +65,125 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-badge">
-                <i class="fa-solid fa-star"></i>
-                <span>Atendimento Exclusivo com Reyber Alexander</span>
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="hero-subtitle">Mais do que uma</p>
+                <h1>BARBEARIA</h1>
+                <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-hero">
+                    AGENDE SEU HORÁRIO <i class="fa-solid fa-chevron-right"></i>
+                </a>
             </div>
-            <h1>Estilo e Precisão <span>no Bairro América</span></h1>
-            <p>Corte, barba e atendimento personalizado com hora marcada em Joinville.</p>
-            <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-main">
-                <i class="fa-solid fa-calendar-check"></i> Agendar Horário Online
-            </a>
         </div>
     </section>
 
-    <div class="features-bar">
-        <div class="container features-grid">
-            <div class="feature-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <h4>Localização Fácil</h4>
-                <p>R. Orestes Guimarães, 720 - América</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-clock"></i>
-                <h4>Horário Amplo</h4>
-                <p>Segunda a Sábado, a partir das 09:00</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-user-check"></i>
-                <h4>Atendimento Solo</h4>
-                <p>Foco total e exclusivo em você</p>
-            </div>
+    <div class="highlight-banner">
+        <div class="container">
+            <h2>UM ESPAÇO DE CONFIANÇA, <span>SEU ESTILO RENOVADO!</span></h2>
         </div>
     </div>
 
-    <section id="sobre">
-        <div class="container">
-            <div class="section-title">
-                <h2>O <span>Studio</span></h2>
-                <div></div>
+    <section id="sobre" class="about-section">
+        <div class="container about-grid">
+            <div class="about-content">
+                <div class="section-heading">
+                    <h2>SOBRE NÓS</h2>
+                    <div class="heading-line"></div>
+                </div>
+                <p>
+                    Bem-vindo ao <strong>Neros Studio Barbearia</strong>, o seu destino definitivo para um cuidado masculino excepcional no bairro América, em Joinville. Com atendimento exclusivo comandado pelo barbeiro e educador <strong>Reyber Alexander</strong>, oferecemos um ambiente climatizado, moderno e focado totalmente em você.
+                </p>
+                <p>
+                    Aqui, cada corte de cabelo, barba ou tratamento facial é executado com técnica, pontualidade e precisão. Mais do que um simples atendimento, entregamos uma experiência de alto nível com hora marcada para renovar sua autoestima.
+                </p>
+                <div class="about-badges">
+                    <span><i class="fa-solid fa-check"></i> Hora Marcada</span>
+                    <span><i class="fa-solid fa-check"></i> Atendimento Individual</span>
+                    <span><i class="fa-solid fa-check"></i> Bairro América</span>
+                </div>
             </div>
-            <p class="about-text">
-                O <strong>Neros Studio Barbearia</strong> é um espaço focado na excelência e no cuidado individual. Comandado pelo barbeiro e educador <strong>Reyber Alexander</strong>, o studio oferece um ambiente aconchegante, climatizado e moderno no bairro América, em Joinville.
-            </p>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80" alt="Interior Neros Studio Barbearia">
+            </div>
         </div>
     </section>
 
-    <section id="servicos">
+    <section id="servicos" class="services-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Nossos <span>Serviços</span></h2>
-                <div></div>
+            <div class="section-heading center">
+                <h2>NOSSOS SERVIÇOS</h2>
+                <div class="heading-line"></div>
             </div>
             
-            <h3 class="services-subtitle">Serviços Principais</h3>
-            <div class="services-grid mb">
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Corte de Cabelo</h3>
-                        <span class="service-price">R$ 70</span>
-                    </div>
-                    <p>Corte profissional com acabamento e alinhamento perfeito.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 30 min</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
+            <p class="services-intro">Confira nossos principais serviços e valores. Escolha o que deseja e agende seu horário com total praticidade.</p>
 
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Barba</h3>
-                        <span class="service-price">R$ 70</span>
-                    </div>
-                    <p>Modelagem e cuidado completo para a sua barba.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 30 min</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Corte de Cabelo + Barba</h3>
-                        <span class="service-price">R$ 130</span>
-                    </div>
-                    <p>O combo essencial para renovar o visual completo.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 1h</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Corte na Máquina</h3>
-                        <span class="service-price">R$ 40</span>
-                    </div>
-                    <p>Praticidade e rapidez com corte uniforme na máquina.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 20 min</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Barba Express</h3>
-                        <span class="service-price">R$ 40</span>
-                    </div>
-                    <p>Manutenção rápida e alinhamento dos fios.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 20 min</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Combo Completo VIP</h3>
-                        <span class="service-price">R$ 190</span>
-                    </div>
-                    <p>Corte de cabelo, barba e depilação de nariz, orelha e sobrancelha.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 1h 30min</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
+            <div class="table-responsive">
+                <table class="services-table">
+                    <thead>
+                        <tr>
+                            <th>Serviço</th>
+                            <th>Tempo Estimado</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Corte de Cabelo</strong></td>
+                            <td><i class="fa-regular fa-clock"></i> 30 min</td>
+                            <td class="price">R$ 70,00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Barba</strong></td>
+                            <td><i class="fa-regular fa-clock"></i> 30 min</td>
+                            <td class="price">R$ 70,00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Corte de Cabelo + Barba</strong></td>
+                            <td><i class="fa-regular fa-clock"></i> 1h</td>
+                            <td class="price">R$ 130,00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Corte na Máquina</strong></td>
+                            <td><i class="fa-regular fa-clock"></i> 20 min</td>
+                            <td class="price">R$ 40,00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Barba Express</strong></td>
+                            <td><i class="fa-regular fa-clock"></i> 20 min</td>
+                            <td class="price">R$ 40,00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Combo Completo VIP</strong> <small>(Corte, barba, nariz, orelha e sobrancelha)</small></td>
+                            <td><i class="fa-regular fa-clock"></i> 1h 30min</td>
+                            <td class="price">R$ 190,00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Barba Terapia</strong></td>
+                            <td><i class="fa-regular fa-clock"></i> 50 min</td>
+                            <td class="price">R$ 100,00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sobrancelha</strong></td>
+                            <td><i class="fa-regular fa-clock"></i> 15 min</td>
+                            <td class="price">R$ 25,00</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <h3 class="services-subtitle">Serviços Extras</h3>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Barba Terapia</h3>
-                        <span class="service-price">R$ 100</span>
-                    </div>
-                    <p>Toalha quente, óleos essenciais e relaxamento máximo.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 50 min</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Hidratação Cabelo</h3>
-                        <span class="service-price">R$ 40</span>
-                    </div>
-                    <p>Recuperação de brilho, maciez e saúde dos fios.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 15 min</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Redutor de Volume</h3>
-                        <span class="service-price">R$ 100</span>
-                    </div>
-                    <p>Tratamento capilar para alinhar e controlar o volume.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 1h</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Sobrancelha</h3>
-                        <span class="service-price">R$ 25</span>
-                    </div>
-                    <p>Alinhamento e limpeza do design na navalha ou pinça.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 15 min</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Depilação Nariz / Orelha</h3>
-                        <span class="service-price">R$ 30</span>
-                    </div>
-                    <p>Remoção de pelos indesejados com total cuidado.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 5 min</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-header">
-                        <h3>Contorno</h3>
-                        <span class="service-price">R$ 20</span>
-                    </div>
-                    <p>Acabamento rápido de pezinho e contorno.</p>
-                    <div class="service-footer">
-                        <div class="service-time"><i class="fa-regular fa-clock"></i> 15 min</div>
-                        <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-service">Agendar <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>
+            <div class="services-cta">
+                <a href="https://app.faroldabarbearia.com.br/agendar/agendaaqui" target="_blank" class="btn-hero">
+                    AGENDE SEU CORTE <i class="fa-solid fa-chevron-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="avaliacoes">
+    <section id="avaliacoes" class="reviews-section">
         <div class="container">
-            <div class="section-title">
-                <h2>O que dizem os <span>Clientes</span></h2>
-                <div></div>
+            <div class="section-heading center">
+                <h2>O QUE DIZEM OS CLIENTES</h2>
+                <div class="heading-line"></div>
             </div>
             <div class="reviews-container">
                 <div class="google-score">
@@ -284,7 +193,7 @@
                         <div class="stars">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <span class="score-count">Baseado em 3 avaliações no Google Maps</span>
+                        <span class="score-count">Baseado em avaliações no Google Maps</span>
                     </div>
                 </div>
 
@@ -319,11 +228,11 @@
         </div>
     </section>
 
-    <section id="contato">
+    <section id="contato" class="contact-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Como nos <span>Encontrar</span></h2>
-                <div></div>
+            <div class="section-heading center">
+                <h2>COMO NOS ENCONTRAR</h2>
+                <div class="heading-line"></div>
             </div>
             <div class="contact-wrapper">
                 <div class="contact-info">
@@ -341,8 +250,22 @@
                             <p>(47) 98914-9089</p>
                         </div>
                     </div>
-                    <a href="https://maps.google.com/?q=R.+Orestes+Guimar%C3%A3es,+720+-+Am%C3%A9rica,+Joinville+-+SC,+89204-060" target="_blank" class="btn-main btn-maps">
-                        <i class="fa-solid fa-route"></i> Traçar Rota no Maps
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-brands fa-instagram"></i></div>
+                        <div class="info-content">
+                            <h4>Instagram</h4>
+                            <p><a href="https://www.instagram.com/nerosstudiobarbearia/" target="_blank" style="color: var(--text-muted); text-decoration: none;">@nerosstudiobarbearia</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-regular fa-clock"></i></div>
+                        <div class="info-content">
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sábado: 09:00 às 19:00</p>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=R.+Orestes+Guimar%C3%A3es,+720+-+Am%C3%A9rica,+Joinville+-+SC,+89204-060" target="_blank" class="btn-hero btn-full">
+                        <i class="fa-solid fa-route"></i> TRAÇAR ROTA NO MAPS
                     </a>
                 </div>
                 <div class="map-container">
@@ -354,8 +277,8 @@
 
     <footer>
         <div class="container">
-            <div class="logo-wrapper">
-                <img src="assets/nerosbarbearia.png" alt="Neros Studio" class="logo-img">
+            <div class="footer-logo">
+                <img src="assets/nerosbarbearia.png" alt="Neros Studio">
             </div>
             <p>&copy; 2026 Neros Studio Barbearia. Todos os direitos reservados.</p>
             <p>R. Orestes Guimarães, 720 - América, Joinville - SC</p>
