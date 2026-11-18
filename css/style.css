@@ -105,40 +105,70 @@ header {
     cursor: pointer;
 }
 
+/* Banner Principal Estilo Dark Premium */
 .hero {
-    min-height: 78vh;
-    background: linear-gradient(90deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.45) 100%),
+    min-height: 85vh;
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.95) 0%, rgba(26, 26, 26, 0.90) 100%),
                 url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
     margin-top: 95px;
-    padding: 80px 0;
+    padding: 70px 0;
+    border-bottom: 4px solid var(--gold);
 }
 
-.hero-container {
-    width: 100%;
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
 }
 
 .hero-content {
-    max-width: 650px;
     text-align: left;
 }
 
 .hero-subtitle {
-    color: var(--white);
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 5px;
+    color: var(--gold);
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
 .hero-content h1 {
     color: var(--white);
-    font-size: 4.5rem;
+    font-size: 4.2rem;
     font-weight: 900;
     line-height: 1.05;
     letter-spacing: 1px;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     text-transform: uppercase;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-desc {
+    color: #dddddd;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: 380px;
+    object-fit: contain;
+    background-color: #111111;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--gold);
 }
 
 .btn-hero {
@@ -216,7 +246,7 @@ section {
 }
 
 .about-section {
-    background-color: var(--white);
+    background-color: var(--bg-gray);
 }
 
 .about-grid {
@@ -241,7 +271,7 @@ section {
 }
 
 .about-badges span {
-    background-color: var(--bg-gray);
+    background-color: var(--white);
     border: 1px solid var(--border-light);
     color: var(--black);
     padding: 8px 16px;
@@ -267,7 +297,7 @@ section {
 }
 
 .services-section {
-    background-color: var(--bg-gray);
+    background-color: var(--white);
     border-top: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
 }
@@ -370,16 +400,17 @@ section {
 }
 
 .reviews-section {
-    background-color: var(--white);
+    background-color: var(--bg-gray);
 }
 
 .reviews-container {
-    background-color: var(--bg-gray);
+    background-color: var(--white);
     border: 1px solid var(--border-light);
     border-radius: 10px;
     padding: 45px;
     max-width: 900px;
     margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .google-score {
@@ -422,7 +453,7 @@ section {
 }
 
 .review-card {
-    background-color: var(--white);
+    background-color: var(--bg-gray);
     padding: 28px;
     border-radius: 8px;
     border: 1px solid var(--border-light);
@@ -467,7 +498,7 @@ section {
 }
 
 .contact-section {
-    background-color: var(--bg-gray);
+    background-color: var(--white);
     border-top: 1px solid var(--border-light);
 }
 
@@ -479,7 +510,7 @@ section {
 }
 
 .contact-info {
-    background-color: var(--white);
+    background-color: var(--bg-gray);
     border: 1px solid var(--border-light);
     padding: 38px;
     border-radius: 8px;
@@ -594,13 +625,22 @@ footer p {
 }
 
 @media (max-width: 992px) {
+    .hero-grid,
     .about-grid,
     .contact-wrapper {
         grid-template-columns: 1fr;
     }
 
+    .hero-content {
+        text-align: center;
+    }
+
     .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
+    }
+
+    .hero-image {
+        margin-top: 20px;
     }
 }
 
@@ -626,18 +666,8 @@ footer p {
         display: block;
     }
 
-    .hero {
-        min-height: 65vh;
-        text-align: center;
-    }
-
-    .hero-content {
-        margin: 0 auto;
-        text-align: center;
-    }
-
     .hero-content h1 {
-        font-size: 2.7rem;
+        font-size: 2.5rem;
     }
 
     .highlight-banner h2 {
