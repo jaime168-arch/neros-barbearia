@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos e E-book | Neros Studio Barbearia — Joinville - SC</title>
+    <meta name="description" content="Catálogo oficial de produtos masculinos e e-book exclusivo da Neros Studio Barbearia em Joinville - SC.">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .shop-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 390px;
+            gap: 40px;
+            margin-top: 130px;
+            margin-bottom: 80px;
+            align-items: start;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background-color: var(--bg-gray);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .product-img-box {
+            width: 100%;
+            height: 210px;
+            background-color: var(--white);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            overflow: hidden;
+        }
+
+        .product-img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--gold);
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .product-card h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .product-bottom {
+            border-top: 1px solid var(--border-light);
+            padding-top: 16px;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 14px;
+        }
+
+        .btn-add-product {
+            width: 100%;
+            background-color: var(--black);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-add-product:hover {
+            background-color: var(--gold);
+            color: var(--black);
+        }
+
+        .checkout-panel {
+            background-color: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 28px;
+            position: sticky;
+            top: 110px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .checkout-panel h3 {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg-gray);
+        }
+
+        .cart-list {
+            max-height: 240px;
+            overflow-y: auto;
+            margin-bottom: 16px;
+        }
+
+        .cart-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.9rem;
+        }
+
+        .cart-row-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-row-price {
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .btn-remove-item {
+            background: none;
+            border: none;
+            color: #d9534f;
+            cursor: pointer;
+            font-size: 0.95rem;
+            padding: 4px 8px;
+        }
+
+        .cart-summary-total {
+            background-color: var(--bg-gray);
+            padding: 14px;
+            border-radius: 4px;
+            text-align: right;
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 22px;
+        }
+
+        .field-box {
+            margin-bottom: 14px;
+        }
+
+        .field-box label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 6px;
+        }
+
+        .field-input {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.92rem;
+            box-sizing: border-box;
+        }
+
+        .field-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .pix-box {
+            display: none;
+            background-color: #fffdf5;
+            border-left: 4px solid var(--gold);
+            padding: 14px;
+            border-radius: 0 4px 4px 0;
+            margin: 14px 0;
+        }
+
+        .pix-code {
+            display: block;
+            font-family: monospace;
+            font-size: 1.05rem;
+            font-weight: 800;
+            background: var(--white);
+            border: 1px dashed var(--gold);
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            color: var(--black);
+        }
+
+        .btn-copy-pix {
+            width: 100%;
+            background-color: var(--black);
+            color: var(--gold);
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .btn-finish-order {
+            width: 100%;
+            background-color: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 16px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            margin-top: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-finish-order:hover {
+            background-color: var(--gold-hover);
+        }
+
+        @media (max-width: 992px) {
+            .shop-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .checkout-panel {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html#home" class="logo-link">
+                <img src="../assets/logo.png" alt="Neros Studio Barbearia" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html#home">Início</a></li>
+                <li><a href="../index.html#sobre">Quem Somos</a></li>
+                <li><a href="../index.html#servicos">Nossos Serviços</a></li>
+                <li><a href="produtos.html#produtos">Produtos</a></li>
+                <li><a href="../index.html#avaliacoes">Avaliações</a></li>
+                <li><a href="../index.html#contato">Contato</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="container shop-wrapper">
+        <main>
+            <div class="section-heading">
+                <h2>PRODUTOS & E-BOOK</h2>
+                <div class="heading-line"></div>
+            </div>
+            <p class="services-intro">Escolha os itens para cuidar do cabelo e da barba em casa, defina a entrega e finalize seu pedido direto no WhatsApp.</p>
+
+            <div class="catalog-grid">
+                <article class="product-card">
+                    <div>
+                        <div class="product-img-box">
+                            <img src="../assets/produtos/pomada.png" alt="Pomada Modeladora Matte">
+                        </div>
+                        <span class="product-badge">Cabelo</span>
+                        <h3>Pomada Modeladora Matte</h3>
+                        <p>Fixação forte com efeito seco natural para manter o penteado alinhado o dia todo.</p>
+                    </div>
+                    <div class="product-bottom">
+                        <div class="product-price">R$ 45,00</div>
+                        <button type="button" class="btn-add-product" onclick="ShopCart.add('Pomada Modeladora Matte', 45.00)">
+                            <i class="fa-solid fa-cart-plus"></i> Adicionar ao Pedido
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div>
+                        <div class="product-img-box">
+                            <img src="../assets/produtos/oleo.png" alt="Óleo para Barba Premium">
+                        </div>
+                        <span class="product-badge">Barba</span>
+                        <h3>Óleo para Barba Premium</h3>
+                        <p>Hidratação profunda, maciez imediata e controle de frizz com fragrância amadeirada.</p>
+                    </div>
+                    <div class="product-bottom">
+                        <div class="product-price">R$ 55,00</div>
+                        <button type="button" class="btn-add-product" onclick="ShopCart.add('Óleo para Barba Premium', 55.00)">
+                            <i class="fa-solid fa-cart-plus"></i> Adicionar ao Pedido
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div>
+                        <div class="product-img-box">
+                            <img src="../assets/produtos/balm.png" alt="Balm Hidratante para Barba">
+                        </div>
+                        <span class="product-badge">Barba</span>
+                        <h3>Balm Hidratante para Barba</h3>
+                        <p>Modela os fios rebeldes, acalma a pele pós-barba e evita ressecamento.</p>
+                    </div>
+                    <div class="product-bottom">
+                        <div class="product-price">R$ 50,00</div>
+                        <button type="button" class="btn-add-product" onclick="ShopCart.add('Balm Hidratante para Barba', 50.00)">
+                            <i class="fa-solid fa-cart-plus"></i> Adicionar ao Pedido
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div>
+                        <div class="product-img-box">
+                            <img src="../assets/produtos/ebook.png" alt="E-book Guia de Cuidados Masculinos">
+                        </div>
+                        <span class="product-badge">Digital • E-book</span>
+                        <h3>E-book: Guia do Homem de Respeito</h3>
+                        <p>Manual prático do Reyber Alexander com rotina de cuidados para barba, cabelo e visagismo em casa.</p>
+                    </div>
+                    <div class="product-bottom">
+                        <div class="product-price">R$ 29,90</div>
+                        <button type="button" class="btn-add-product" onclick="ShopCart.add('E-book: Guia do Homem de Respeito', 29.90)">
+                            <i class="fa-solid fa-book-open"></i> Adicionar E-book
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <aside>
+            <div class="checkout-panel">
+                <h3><i class="fa-solid fa-bag-shopping"></i> Seu Pedido</h3>
+
+                <div id="cartContainer" class="cart-list"></div>
+
+                <div class="cart-summary-total">
+                    Total: R$ <span id="cartTotal">0.00</span>
+                </div>
+
+                <form id="orderForm">
+                    <div class="field-box">
+                        <label for="customerName">Seu Nome *</label>
+                        <input type="text" id="customerName" class="field-input" placeholder="Ex: João Silva" required>
+                    </div>
+
+                    <div class="field-box">
+                        <label for="deliveryMode">Recebimento *</label>
+                        <select id="deliveryMode" class="field-input" onchange="ShopUI.toggleDelivery()">
+                            <option value="Entrega via Motoboy">Entrega via Motoboy (Joinville)</option>
+                            <option value="Retirada na Barbearia">Retirada na Barbearia</option>
+                            <option value="Envio Digital (E-book)">Envio Digital (Apenas E-book)</option>
+                        </select>
+                    </div>
+
+                    <div id="addressGroup" class="field-box">
+                        <label for="customerAddress">Endereço de Entrega *</label>
+                        <textarea id="customerAddress" class="field-input" rows="2" placeholder="Rua, número, bairro e complemento"></textarea>
+                    </div>
+
+                    <div class="field-box">
+                        <label for="paymentType">Forma de Pagamento *</label>
+                        <select id="paymentType" class="field-input" onchange="ShopUI.togglePayment()">
+                            <option value="Pix">Pix</option>
+                            <option value="Cartão na Entrega (Débito/Crédito)">Cartão na Entrega (Débito/Crédito)</option>
+                            <option value="Dinheiro na Entrega">Dinheiro na Entrega</option>
+                        </select>
+                    </div>
+
+                    <div id="pixContainer" class="pix-box">
+                        <label style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">Chave Pix (Celular):</label>
+                        <span class="pix-code">47989149089</span>
+                        <button type="button" class="btn-copy-pix" onclick="ShopUI.copyPix()">
+                            <i class="fa-regular fa-copy"></i> Copiar Chave Pix
+                        </button>
+                    </div>
+
+                    <div id="changeGroup" class="field-box" style="display: none;">
+                        <label for="changeFor">Troco para quanto?</label>
+                        <input type="text" id="changeFor" class="field-input" placeholder="Ex: R$ 100,00 (ou Sem troco)">
+                    </div>
+
+                    <button type="button" class="btn-finish-order" onclick="ShopCheckout.send()">
+                        <i class="fa-brands fa-whatsapp"></i> Finalizar no WhatsApp
+                    </button>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../assets/logo.png" alt="Neros Studio">
+            </div>
+            <p>&copy; 2026 Neros Studio Barbearia. Todos os direitos reservados.</p>
+            <p>R. Orestes Guimarães, 720 - América, Joinville - SC</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5547989149089?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20os%20produtos%20do%20Neros%20Studio%20Barbearia." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const ShopCart = {
+            items: [],
+
+            add(name, price) {
+                this.items.push({ name, price });
+                ShopUI.render();
+            },
+
+            remove(index) {
+                this.items.splice(index, 1);
+                ShopUI.render();
+            },
+
+            total() {
+                return this.items.reduce((acc, item) => acc + item.price, 0);
+            }
+        };
+
+        const ShopUI = {
+            PIX_KEY: '47989149089',
+
+            init() {
+                const menuBtn = document.getElementById('menuBtn');
+                const navLinks = document.getElementById('navLinks');
+                if (menuBtn && navLinks) {
+                    menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+                }
+                this.render();
+                this.toggleDelivery();
+                this.togglePayment();
+            },
+
+            render() {
+                const container = document.getElementById('cartContainer');
+                const totalEl = document.getElementById('cartTotal');
+
+                if (ShopCart.items.length === 0) {
+                    container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem; padding: 12px 0;">Nenhum item adicionado ainda.</p>';
+                } else {
+                    container.innerHTML = ShopCart.items.map((item, idx) => `
+                        <div class="cart-row">
+                            <div class="cart-row-details">
+                                <span>${item.name}</span>
+                                <span class="cart-row-price">R$ ${item.price.toFixed(2)}</span>
+                            </div>
+                            <button type="button" class="btn-remove-item" onclick="ShopCart.remove(${idx})" aria-label="Remover">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                    `).join('');
+                }
+
+                totalEl.textContent = ShopCart.total().toFixed(2);
+            },
+
+            toggleDelivery() {
+                const mode = document.getElementById('deliveryMode').value;
+                const addressGroup = document.getElementById('addressGroup');
+                addressGroup.style.display = mode === 'Entrega via Motoboy' ? 'block' : 'none';
+            },
+
+            togglePayment() {
+                const payment = document.getElementById('paymentType').value;
+                document.getElementById('pixContainer').style.display = payment === 'Pix' ? 'block' : 'none';
+                document.getElementById('changeGroup').style.display = payment === 'Dinheiro na Entrega' ? 'block' : 'none';
+            },
+
+            copyPix() {
+                navigator.clipboard.writeText(this.PIX_KEY).then(() => {
+                    alert('Chave Pix copiada!');
+                });
+            }
+        };
+
+        const ShopCheckout = {
+            PHONE: '5547989149089',
+
+            send() {
+                if (ShopCart.items.length === 0) {
+                    alert('Adicione pelo menos um produto ou e-book ao pedido.');
+                    return;
+                }
+
+                const name = document.getElementById('customerName').value.trim();
+                if (!name) {
+                    alert('Informe seu nome para continuar.');
+                    document.getElementById('customerName').focus();
+                    return;
+                }
+
+                const delivery = document.getElementById('deliveryMode').value;
+                const address = document.getElementById('customerAddress').value.trim();
+                if (delivery === 'Entrega via Motoboy' && !address) {
+                    alert('Informe o endereço completo para a entrega.');
+                    document.getElementById('customerAddress').focus();
+                    return;
+                }
+
+                const payment = document.getElementById('paymentType').value;
+                const change = document.getElementById('changeFor').value.trim();
+
+                let text = `*NOVO PEDIDO - NEROS STUDIO BARBEARIA*\n\n`;
+                text += `*Cliente:* ${name}\n`;
+                text += `*Recebimento:* ${delivery}\n`;
+                if (delivery === 'Entrega via Motoboy') {
+                    text += `*Endereço:* ${address}\n`;
+                }
+                text += `*Pagamento:* ${payment}\n`;
+                if (payment === 'Dinheiro na Entrega' && change) {
+                    text += `*Troco para:* ${change}\n`;
+                }
+
+                text += `\n*Itens do Pedido:*\n`;
+                ShopCart.items.forEach(item => {
+                    text += `• ${item.name} — R$ ${item.price.toFixed(2)}\n`;
+                });
+                text += `\n*Total: R$ ${ShopCart.total().toFixed(2)}*`;
+
+                window.open(`https://wa.me/${this.PHONE}?text=${encodeURIComponent(text)}`, '_blank');
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => ShopUI.init());
+    </script>
+</body>
+</html>
