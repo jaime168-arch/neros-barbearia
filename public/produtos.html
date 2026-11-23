@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos e E-book | Neros Studio Barbearia — Joinville - SC</title>
-    <meta name="description" content="Catálogo oficial de produtos masculinos e e-book exclusivo da Neros Studio Barbearia em Joinville - SC.">
+    <meta name="description" content="Catálogo completo Bell'Uomo, Fox For Men e e-book exclusivo da Neros Studio Barbearia em Joinville - SC.">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -20,38 +20,91 @@
             align-items: start;
         }
 
+        /* Abas de Filtro por Marca */
+        .brand-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 24px 0 32px 0;
+        }
+
+        .brand-tab-btn {
+            background-color: var(--bg-gray);
+            color: var(--black);
+            border: 1px solid var(--border-light);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .brand-tab-btn:hover,
+        .brand-tab-btn.active {
+            background-color: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+
+        .brand-section {
+            margin-bottom: 48px;
+        }
+
+        .brand-title {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--black);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+            margin-bottom: 22px;
+            border-bottom: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-title span {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 24px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 22px;
         }
 
         .product-card {
             background-color: var(--bg-gray);
             border: 1px solid var(--border-light);
             border-radius: 8px;
-            padding: 24px;
+            padding: 22px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
+            transform: translateY(-4px);
+            border-color: var(--black);
         }
 
         .product-img-box {
             width: 100%;
-            height: 210px;
+            height: 200px;
             background-color: var(--white);
             border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             overflow: hidden;
         }
 
@@ -64,8 +117,8 @@
         .product-badge {
             display: inline-block;
             background-color: var(--black);
-            color: var(--gold);
-            font-size: 0.7rem;
+            color: var(--white);
+            font-size: 0.68rem;
             font-weight: 800;
             text-transform: uppercase;
             padding: 4px 10px;
@@ -75,53 +128,75 @@
         }
 
         .product-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: var(--black);
             margin-bottom: 8px;
         }
 
         .product-card p {
-            font-size: 0.9rem;
+            font-size: 0.86rem;
             color: var(--text-muted);
             line-height: 1.5;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
+        }
+
+        .variant-select {
+            width: 100%;
+            padding: 9px 10px;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            background-color: var(--white);
+            font-family: inherit;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 14px;
         }
 
         .product-bottom {
             border-top: 1px solid var(--border-light);
-            padding-top: 16px;
+            padding-top: 14px;
         }
 
         .product-price {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 900;
             color: var(--black);
-            margin-bottom: 14px;
+            margin-bottom: 12px;
+        }
+
+        .product-price small {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
         }
 
         .btn-add-product {
             width: 100%;
             background-color: var(--black);
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 12px;
+            color: var(--white);
+            border: 1px solid var(--black);
+            padding: 11px;
             border-radius: 4px;
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .btn-add-product:hover {
-            background-color: var(--gold);
-            color: var(--black);
+            background-color: #2b2b2b;
+            border-color: #2b2b2b;
         }
 
+        /* Painel Lateral do Pedido */
         .checkout-panel {
             background-color: var(--white);
-            border: 2px solid var(--gold);
+            border: 1px solid var(--border-light);
+            border-top: 4px solid var(--black);
             border-radius: 8px;
             padding: 28px;
             position: sticky;
@@ -166,7 +241,7 @@
         .btn-remove-item {
             background: none;
             border: none;
-            color: #d9534f;
+            color: #b91c1c;
             cursor: pointer;
             font-size: 0.95rem;
             padding: 4px 8px;
@@ -208,13 +283,13 @@
 
         .field-input:focus {
             outline: none;
-            border-color: var(--gold);
+            border-color: var(--black);
         }
 
-        .pix-box {
+        .payment-box {
             display: none;
-            background-color: #fffdf5;
-            border-left: 4px solid var(--gold);
+            background-color: var(--bg-gray);
+            border-left: 4px solid var(--black);
             padding: 14px;
             border-radius: 0 4px 4px 0;
             margin: 14px 0;
@@ -226,29 +301,63 @@
             font-size: 1.05rem;
             font-weight: 800;
             background: var(--white);
-            border: 1px dashed var(--gold);
+            border: 1px dashed #9ca3af;
             padding: 8px;
             text-align: center;
-            margin: 8px 0;
+            margin: 8px 0 10px 0;
             color: var(--black);
         }
 
-        .btn-copy-pix {
+        .btn-secondary-action {
             width: 100%;
-            background-color: var(--black);
-            color: var(--gold);
-            border: none;
-            padding: 8px;
+            background-color: var(--white);
+            color: var(--black);
+            border: 1px solid var(--black);
+            padding: 8px 10px;
             border-radius: 4px;
             font-weight: 700;
             font-size: 0.8rem;
             cursor: pointer;
+            margin-bottom: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary-action:hover {
+            background-color: #e5e7eb;
+        }
+
+        .confirm-payment-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-top: 8px;
+            cursor: pointer;
+        }
+
+        .confirm-payment-label input {
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .payment-status-badge {
+            display: none;
+            margin-top: 10px;
+            padding: 8px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            background-color: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
         }
 
         .btn-finish-order {
             width: 100%;
-            background-color: var(--gold);
-            color: var(--black);
+            background-color: var(--black);
+            color: var(--white);
             border: none;
             padding: 16px;
             border-radius: 4px;
@@ -258,11 +367,16 @@
             letter-spacing: 0.5px;
             cursor: pointer;
             margin-top: 18px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.25s ease, opacity 0.25s ease;
         }
 
-        .btn-finish-order:hover {
-            background-color: var(--gold-hover);
+        .btn-finish-order:hover:not(:disabled) {
+            background-color: #2b2b2b;
+        }
+
+        .btn-finish-order:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
         }
 
         @media (max-width: 992px) {
@@ -286,7 +400,7 @@
                 <li><a href="../index.html#home">Início</a></li>
                 <li><a href="../index.html#sobre">Quem Somos</a></li>
                 <li><a href="../index.html#servicos">Nossos Serviços</a></li>
-                <li><a href="produtos.html#produtos">Produtos</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
                 <li><a href="../index.html#avaliacoes">Avaliações</a></li>
                 <li><a href="../index.html#contato">Contato</a></li>
             </ul>
@@ -299,80 +413,386 @@
     <div class="container shop-wrapper">
         <main>
             <div class="section-heading">
-                <h2>PRODUTOS & E-BOOK</h2>
+                <h2>CATÁLOGO DE PRODUTOS & E-BOOK</h2>
                 <div class="heading-line"></div>
             </div>
-            <p class="services-intro">Escolha os itens para cuidar do cabelo e da barba em casa, defina a entrega e finalize seu pedido direto no WhatsApp.</p>
+            <p class="services-intro">Filtre pela marca de sua preferência, adicione os produtos ao pedido, confirme o pagamento e envie direto pelo WhatsApp.</p>
 
-            <div class="catalog-grid">
-                <article class="product-card">
-                    <div>
-                        <div class="product-img-box">
-                            <img src="../assets/produtos/pomada.png" alt="Pomada Modeladora Matte">
-                        </div>
-                        <span class="product-badge">Cabelo</span>
-                        <h3>Pomada Modeladora Matte</h3>
-                        <p>Fixação forte com efeito seco natural para manter o penteado alinhado o dia todo.</p>
-                    </div>
-                    <div class="product-bottom">
-                        <div class="product-price">R$ 45,00</div>
-                        <button type="button" class="btn-add-product" onclick="ShopCart.add('Pomada Modeladora Matte', 45.00)">
-                            <i class="fa-solid fa-cart-plus"></i> Adicionar ao Pedido
-                        </button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div>
-                        <div class="product-img-box">
-                            <img src="../assets/produtos/oleo.png" alt="Óleo para Barba Premium">
-                        </div>
-                        <span class="product-badge">Barba</span>
-                        <h3>Óleo para Barba Premium</h3>
-                        <p>Hidratação profunda, maciez imediata e controle de frizz com fragrância amadeirada.</p>
-                    </div>
-                    <div class="product-bottom">
-                        <div class="product-price">R$ 55,00</div>
-                        <button type="button" class="btn-add-product" onclick="ShopCart.add('Óleo para Barba Premium', 55.00)">
-                            <i class="fa-solid fa-cart-plus"></i> Adicionar ao Pedido
-                        </button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div>
-                        <div class="product-img-box">
-                            <img src="../assets/produtos/balm.png" alt="Balm Hidratante para Barba">
-                        </div>
-                        <span class="product-badge">Barba</span>
-                        <h3>Balm Hidratante para Barba</h3>
-                        <p>Modela os fios rebeldes, acalma a pele pós-barba e evita ressecamento.</p>
-                    </div>
-                    <div class="product-bottom">
-                        <div class="product-price">R$ 50,00</div>
-                        <button type="button" class="btn-add-product" onclick="ShopCart.add('Balm Hidratante para Barba', 50.00)">
-                            <i class="fa-solid fa-cart-plus"></i> Adicionar ao Pedido
-                        </button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div>
-                        <div class="product-img-box">
-                            <img src="../assets/produtos/ebook.png" alt="E-book Guia de Cuidados Masculinos">
-                        </div>
-                        <span class="product-badge">Digital • E-book</span>
-                        <h3>E-book: Guia do Homem de Respeito</h3>
-                        <p>Manual prático do Reyber Alexander com rotina de cuidados para barba, cabelo e visagismo em casa.</p>
-                    </div>
-                    <div class="product-bottom">
-                        <div class="product-price">R$ 29,90</div>
-                        <button type="button" class="btn-add-product" onclick="ShopCart.add('E-book: Guia do Homem de Respeito', 29.90)">
-                            <i class="fa-solid fa-book-open"></i> Adicionar E-book
-                        </button>
-                    </div>
-                </article>
+            <!-- Botões de Filtro por Marca -->
+            <div class="brand-tabs">
+                <button type="button" class="brand-tab-btn active" onclick="BrandFilter.select('all', this)">Todos os Produtos</button>
+                <button type="button" class="brand-tab-btn" onclick="BrandFilter.select('belluomo', this)">Bell'Uomo</button>
+                <button type="button" class="brand-tab-btn" onclick="BrandFilter.select('fox', this)">Fox For Men</button>
+                <button type="button" class="brand-tab-btn" onclick="BrandFilter.select('outros', this)">Outros & E-book</button>
             </div>
+
+            <!-- ==========================================
+                 MARCA 1: BELL'UOMO
+                 ========================================== -->
+            <section class="brand-section" data-brand="belluomo">
+                <div class="brand-title">
+                    Linha Bell'Uomo <span>Cabelo & Barba</span>
+                </div>
+
+                <div class="catalog-grid">
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/cera-sfumato.png" alt="Cera Mate Sfumato Bell'Uomo">
+                            </div>
+                            <span class="product-badge">Bell'Uomo</span>
+                            <h3>Cera Mate Sfumato</h3>
+                            <p>Fixação forte (9/10) com efeito mate seco que mantém o visual natural o dia todo.</p>
+                            <select id="var-sfumato" class="variant-select">
+                                <option value="80g">Tamanho: 80g</option>
+                                <option value="130g">Tamanho: 130g</option>
+                            </select>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 49,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.addWithVariant('Cera Mate Sfumato Bell\'Uomo', 'var-sfumato', 49.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/balm-barba.png" alt="Balm White Bell'Uomo">
+                            </div>
+                            <span class="product-badge">Bell'Uomo • Linha White</span>
+                            <h3>Balm White</h3>
+                            <p>Com manteiga de karité e cera de abelha para hidratar, alinhar e acalmar a pele.</p>
+                            <select id="var-balm-bell" class="variant-select">
+                                <option value="120ml">Tamanho: 120ml</option>
+                                <option value="500ml">Tamanho: 500ml</option>
+                            </select>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 69,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.addWithVariant('Balm White Bell\'Uomo', 'var-balm-bell', 69.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/cera-bagnato.png" alt="Cera Bagnato Bell'Uomo">
+                            </div>
+                            <span class="product-badge">Bell'Uomo • Linha Gold</span>
+                            <h3>Cera Bagnato</h3>
+                            <p>100g com fixação forte e efeito brilho para penteados alinhados sem oleosidade.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 59,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Cera Bagnato Bell\'Uomo (100g)', 59.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/cera-bambino.png" alt="Cera Bambino Bell'Uomo">
+                            </div>
+                            <span class="product-badge">Bell'Uomo</span>
+                            <h3>Cera Bambino</h3>
+                            <p>Modelagem leve e suave, ideal para penteados naturais e uso diário sem pesar.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 49,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Cera Bambino Bell\'Uomo', 49.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/cera-premium.png" alt="Cera Premium Bell'Uomo">
+                            </div>
+                            <span class="product-badge">Bell'Uomo</span>
+                            <h3>Cera Premium</h3>
+                            <p>Alta definição, controle prolongado e acabamento sofisticado para o penteado.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 69,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Cera Premium Bell\'Uomo', 69.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/cera-reale.png" alt="Cera Reale Bell'Uomo">
+                            </div>
+                            <span class="product-badge">Bell'Uomo • Linha Gold</span>
+                            <h3>Cera Reale</h3>
+                            <p>100g para modelar e fixar com acabamento seco e natural em todos os tipos de cabelo.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 59,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Cera Reale Bell\'Uomo (100g)', 59.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/oleo-barba.png" alt="Óleo de Barba Bell'Uomo">
+                            </div>
+                            <span class="product-badge">Bell'Uomo • Linha White</span>
+                            <h3>Óleo de Barba (30ml)</h3>
+                            <p>Hidratação instantânea, nutrição, redução de frizz e aroma refinado.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 69,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Óleo de Barba Bell\'Uomo (30ml)', 69.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/pomada-po-belluomo.png" alt="Pomada em Pó Bell'Uomo">
+                            </div>
+                            <span class="product-badge">Bell'Uomo</span>
+                            <h3>Pomada em Pó</h3>
+                            <p>Volume imediato na raiz, textura seca e controle natural da oleosidade.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 69,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Pomada em Pó Bell\'Uomo', 69.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/shampoo-mentolado.png" alt="Shampoo Bell'Uomo">
+                            </div>
+                            <span class="product-badge">Bell'Uomo • Linha Gold</span>
+                            <h3>Shampoo Mentolado</h3>
+                            <p>Limpeza profunda e refrescante com mentol e óleo de melaleuca para cabelo e barba.</p>
+                            <select id="var-shampoo-bell" class="variant-select">
+                                <option value="300ml">Tamanho: 300ml</option>
+                                <option value="1L">Tamanho: 1L</option>
+                            </select>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 69,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.addWithVariant('Shampoo Bell\'Uomo', 'var-shampoo-bell', 69.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 MARCA 2: FOX FOR MEN
+                 ========================================== -->
+            <section class="brand-section" data-brand="fox">
+                <div class="brand-title">
+                    Linha Fox For Men <span>Performance & Estilo</span>
+                </div>
+
+                <div class="catalog-grid">
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/fox-balm-barba.png" alt="Balm Fox For Men">
+                            </div>
+                            <span class="product-badge">Fox For Men</span>
+                            <h3>Balm Fox (120ml)</h3>
+                            <p>Hidrata e reduz o frizz nos fios rebeldes da barba mantendo o alinhamento.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 69,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Balm Fox (120ml)', 69.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/fox-leave-in.png" alt="Leave-in Fox For Men">
+                            </div>
+                            <span class="product-badge">Fox For Men</span>
+                            <h3>Leave-in Fox (240ml)</h3>
+                            <p>Hidratação intensa, proteção térmica, controle de frizz, brilho e maciez.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 69,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Leave-in Fox (240ml)', 69.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/fox-oleo-barba.png" alt="Óleo de Barba Fox For Men">
+                            </div>
+                            <span class="product-badge">Fox For Men</span>
+                            <h3>Óleo de Barba Fox (30ml)</h3>
+                            <p>Promove hidratação, maciez e alinhamento diário para os fios da barba.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 69,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Óleo de Barba Fox (30ml)', 69.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/fox-cera-caramelo.png" alt="Pomada Caramelo Fox For Men">
+                            </div>
+                            <span class="product-badge">Fox For Men • Fixação Extra Forte</span>
+                            <h3>Pomada Caramelo Fox (80g)</h3>
+                            <p>Cera modeladora com fixação extra forte para todos os tipos de cabelo.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 49,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Pomada Caramelo Fox (80g)', 49.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/fox-po-modelador.png" alt="Pomada em Pó Fox For Men">
+                            </div>
+                            <span class="product-badge">Fox For Men • Efeito Matte</span>
+                            <h3>Pomada em Pó Fox (7g)</h3>
+                            <p>Pó modelador efeito matte com controle de oleosidade e volume imediato.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 49,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Pomada em Pó Fox (7g)', 49.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/fox-wax-toque-seco.png" alt="Pomada Toque Seco Fox For Men">
+                            </div>
+                            <span class="product-badge">Fox For Men • Toque Seco</span>
+                            <h3>Pomada Toque Seco Fox (80g)</h3>
+                            <p>Wax modeladora com efeito e toque seco para deixar os fios alinhados.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 49,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Pomada Toque Seco Fox (80g)', 49.90)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 OUTROS PRODUTOS & E-BOOK
+                 ========================================== -->
+            <section class="brand-section" data-brand="outros">
+                <div class="brand-title">
+                    Cuidados Especiais & E-book <span>Exclusivos</span>
+                </div>
+
+                <div class="catalog-grid">
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/estimulante-barba.png" alt="Estimulante de Barba">
+                            </div>
+                            <span class="product-badge">Barba</span>
+                            <h3>Estimulante de Barba</h3>
+                            <p>Auxilia no fortalecimento e preenchimento dos fios da barba.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 0,00 <small>Consultar valor no pedido</small></div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Estimulante de Barba', 0.00)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/shampoo-barba.png" alt="Shampoo de Barba">
+                            </div>
+                            <span class="product-badge">Barba</span>
+                            <h3>Shampoo de Barba</h3>
+                            <p>Limpeza suave e refrescante específica para higienizar os fios da barba.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 0,00 <small>Consultar valor no pedido</small></div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Shampoo de Barba', 0.00)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/shampoo-cabelo.png" alt="Shampoo de Cabelo">
+                            </div>
+                            <span class="product-badge">Cabelo</span>
+                            <h3>Shampoo de Cabelo</h3>
+                            <p>Higienização diária que limpa o couro cabeludo sem ressecar os fios.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 0,00 <small>Consultar valor no pedido</small></div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('Shampoo de Cabelo', 0.00)">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div>
+                            <div class="product-img-box">
+                                <img src="../assets/produtos/ebook.png" alt="E-book Neros Studio">
+                            </div>
+                            <span class="product-badge">Digital • E-book</span>
+                            <h3>E-book: Guia do Homem de Respeito</h3>
+                            <p>Conteúdo exclusivo do Reyber Alexander com dicas práticas de cuidados com barba, cabelo e estilo.</p>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">R$ 29,90</div>
+                            <button type="button" class="btn-add-product" onclick="ShopCart.add('E-book: Guia do Homem de Respeito', 29.90)">
+                                <i class="fa-solid fa-book-open"></i> Adicionar E-book
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </main>
 
         <aside>
@@ -414,21 +834,48 @@
                         </select>
                     </div>
 
-                    <div id="pixContainer" class="pix-box">
+                    <!-- Bloco Pix com confirmação -->
+                    <div id="pixContainer" class="payment-box">
                         <label style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">Chave Pix (Celular):</label>
                         <span class="pix-code">47989149089</span>
-                        <button type="button" class="btn-copy-pix" onclick="ShopUI.copyPix()">
+                        <button type="button" class="btn-secondary-action" onclick="ShopUI.copyPix()">
                             <i class="fa-regular fa-copy"></i> Copiar Chave Pix
                         </button>
+                        <label class="confirm-payment-label">
+                            <input type="checkbox" id="confirmPixCheck" onchange="ShopUI.updatePaymentStatus()">
+                            <span>Confirmo que realizei o pagamento via Pix no valor total do pedido.</span>
+                        </label>
                     </div>
 
-                    <div id="changeGroup" class="field-box" style="display: none;">
-                        <label for="changeFor">Troco para quanto?</label>
-                        <input type="text" id="changeFor" class="field-input" placeholder="Ex: R$ 100,00 (ou Sem troco)">
+                    <!-- Bloco Cartão na Entrega com confirmação -->
+                    <div id="cardContainer" class="payment-box">
+                        <p style="font-size: 0.82rem; color: var(--black); font-weight: 600; margin-bottom: 8px;">
+                            Pagamento na maquininha com o motoboy (Débito ou Crédito).
+                        </p>
+                        <label class="confirm-payment-label">
+                            <input type="checkbox" id="confirmCardCheck" onchange="ShopUI.updatePaymentStatus()">
+                            <span>Confirmo o pagamento no cartão na entrega.</span>
+                        </label>
                     </div>
 
-                    <button type="button" class="btn-finish-order" onclick="ShopCheckout.send()">
-                        <i class="fa-brands fa-whatsapp"></i> Finalizar no WhatsApp
+                    <!-- Bloco Dinheiro na Entrega com troco e confirmação -->
+                    <div id="cashContainer" class="payment-box">
+                        <div class="field-box" style="margin-bottom: 10px;">
+                            <label for="changeFor">Troco para quanto?</label>
+                            <input type="text" id="changeFor" class="field-input" placeholder="Ex: R$ 100,00 (ou Sem troco)">
+                        </div>
+                        <label class="confirm-payment-label">
+                            <input type="checkbox" id="confirmCashCheck" onchange="ShopUI.updatePaymentStatus()">
+                            <span>Confirmo o pagamento em dinheiro na entrega.</span>
+                        </label>
+                    </div>
+
+                    <div id="paymentStatusBadge" class="payment-status-badge">
+                        <i class="fa-solid fa-circle-check"></i> Pagamento confirmado — pronto para enviar no WhatsApp!
+                    </div>
+
+                    <button type="button" id="btnFinishOrder" class="btn-finish-order" onclick="ShopCheckout.send()" disabled>
+                        <i class="fa-brands fa-whatsapp"></i> Confirmar Pagamento para Enviar
                     </button>
                 </form>
             </div>
@@ -445,17 +892,35 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/5547989149089?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20os%20produtos%20do%20Neros%20Studio%20Barbearia." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <a href="https://wa.me/5547989149089?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20ou%20agendar%20um%20hor%C3%A1rio%20no%20Neros%20Studio%20Barbearia." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <script>
+        const BrandFilter = {
+            select(brand, btnEl) {
+                document.querySelectorAll('.brand-tab-btn').forEach(btn => btn.classList.remove('active'));
+                btnEl.classList.add('active');
+
+                document.querySelectorAll('.brand-section').forEach(sec => {
+                    sec.style.display = (brand === 'all' || sec.dataset.brand === brand) ? 'block' : 'none';
+                });
+            }
+        };
+
         const ShopCart = {
             items: [],
 
             add(name, price) {
                 this.items.push({ name, price });
                 ShopUI.render();
+            },
+
+            addWithVariant(baseName, selectId, price) {
+                const selectEl = document.getElementById(selectId);
+                const variant = selectEl ? selectEl.value : '';
+                const fullName = variant ? `${baseName} (${variant})` : baseName;
+                this.add(fullName, price);
             },
 
             remove(index) {
@@ -514,7 +979,35 @@
             togglePayment() {
                 const payment = document.getElementById('paymentType').value;
                 document.getElementById('pixContainer').style.display = payment === 'Pix' ? 'block' : 'none';
-                document.getElementById('changeGroup').style.display = payment === 'Dinheiro na Entrega' ? 'block' : 'none';
+                document.getElementById('cardContainer').style.display = payment === 'Cartão na Entrega (Débito/Crédito)' ? 'block' : 'none';
+                document.getElementById('cashContainer').style.display = payment === 'Dinheiro na Entrega' ? 'block' : 'none';
+                this.updatePaymentStatus();
+            },
+
+            isPaymentConfirmed() {
+                const payment = document.getElementById('paymentType').value;
+                if (payment === 'Pix') {
+                    return document.getElementById('confirmPixCheck').checked;
+                }
+                if (payment === 'Cartão na Entrega (Débito/Crédito)') {
+                    return document.getElementById('confirmCardCheck').checked;
+                }
+                if (payment === 'Dinheiro na Entrega') {
+                    return document.getElementById('confirmCashCheck').checked;
+                }
+                return false;
+            },
+
+            updatePaymentStatus() {
+                const confirmed = this.isPaymentConfirmed();
+                const badge = document.getElementById('paymentStatusBadge');
+                const btn = document.getElementById('btnFinishOrder');
+
+                badge.style.display = confirmed ? 'block' : 'none';
+                btn.disabled = !confirmed;
+                btn.innerHTML = confirmed
+                    ? '<i class="fa-brands fa-whatsapp"></i> Enviar Pedido Confirmado no WhatsApp'
+                    : '<i class="fa-brands fa-whatsapp"></i> Confirmar Pagamento para Enviar';
             },
 
             copyPix() {
@@ -526,6 +1019,31 @@
 
         const ShopCheckout = {
             PHONE: '5547989149089',
+
+            buildMessage(name, delivery, address, payment, change) {
+                let text = `*NOVO PEDIDO - NEROS STUDIO BARBEARIA*\n\n`;
+                text += `*Cliente:* ${name}\n`;
+                text += `*Recebimento:* ${delivery}\n`;
+                if (delivery === 'Entrega via Motoboy') {
+                    text += `*Endereço:* ${address}\n`;
+                }
+                text += `*Pagamento:* ${payment}\n`;
+                text += `*Status do Pagamento:* CONFIRMADO PELO CLIENTE\n`;
+                if (payment === 'Dinheiro na Entrega' && change) {
+                    text += `*Troco para:* ${change}\n`;
+                }
+
+                text += `\n*Itens do Pedido:*\n`;
+                ShopCart.items.forEach(item => {
+                    text += `• ${item.name} — R$ ${item.price.toFixed(2)}\n`;
+                });
+                text += `\n*Total: R$ ${ShopCart.total().toFixed(2)}*`;
+                return text;
+            },
+
+            sendToWhatsApp(text) {
+                window.open(`https://wa.me/${this.PHONE}?text=${encodeURIComponent(text)}`, '_blank');
+            },
 
             send() {
                 if (ShopCart.items.length === 0) {
@@ -548,27 +1066,16 @@
                     return;
                 }
 
+                if (!ShopUI.isPaymentConfirmed()) {
+                    alert('Confirme o pagamento na opção escolhida antes de enviar o pedido.');
+                    return;
+                }
+
                 const payment = document.getElementById('paymentType').value;
                 const change = document.getElementById('changeFor').value.trim();
+                const message = this.buildMessage(name, delivery, address, payment, change);
 
-                let text = `*NOVO PEDIDO - NEROS STUDIO BARBEARIA*\n\n`;
-                text += `*Cliente:* ${name}\n`;
-                text += `*Recebimento:* ${delivery}\n`;
-                if (delivery === 'Entrega via Motoboy') {
-                    text += `*Endereço:* ${address}\n`;
-                }
-                text += `*Pagamento:* ${payment}\n`;
-                if (payment === 'Dinheiro na Entrega' && change) {
-                    text += `*Troco para:* ${change}\n`;
-                }
-
-                text += `\n*Itens do Pedido:*\n`;
-                ShopCart.items.forEach(item => {
-                    text += `• ${item.name} — R$ ${item.price.toFixed(2)}\n`;
-                });
-                text += `\n*Total: R$ ${ShopCart.total().toFixed(2)}*`;
-
-                window.open(`https://wa.me/${this.PHONE}?text=${encodeURIComponent(text)}`, '_blank');
+                this.sendToWhatsApp(message);
             }
         };
 
